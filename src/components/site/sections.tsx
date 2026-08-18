@@ -38,12 +38,12 @@ export function SectionHead({
 export function Hero() {
   return (
     <section className="relative overflow-hidden px-5 pb-16 pt-28 sm:px-8 sm:pb-24 sm:pt-40">
-      <div className="mx-auto grid max-w-[1400px] items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="mx-auto grid max-w-[1400px] items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
           <Reveal>
             <p className="kp-eyebrow">360° Creative &amp; Digital Growth Agency</p>
           </Reveal>
-          <h1 className="mt-6 font-display text-[16vw] font-bold uppercase leading-[0.85] tracking-tighter text-foreground sm:text-[7.5rem] lg:text-[8.5rem]">
+          <h1 className="mt-6 font-display text-[15vw] font-bold uppercase leading-[0.86] tracking-tighter text-foreground sm:text-[5.5rem] lg:text-[6.75rem]">
             <Reveal delay={60} as="span" className="block">
               We create.
             </Reveal>
