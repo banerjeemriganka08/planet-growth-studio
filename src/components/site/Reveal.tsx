@@ -16,6 +16,7 @@ export function Reveal({
   const [shown, setShown] = useState(false);
 
   useEffect(() => {
+    console.log("KPREVEAL effect", !!ref.current);
     const node = ref.current;
     if (!node) return;
     const io = new IntersectionObserver(
