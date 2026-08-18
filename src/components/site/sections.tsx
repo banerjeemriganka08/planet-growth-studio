@@ -43,7 +43,7 @@ export function Hero() {
           <Reveal>
             <p className="kp-eyebrow">360° Creative &amp; Digital Growth Agency</p>
           </Reveal>
-          <h1 className="mt-6 font-display text-[15vw] font-bold uppercase leading-[0.86] tracking-tighter text-foreground sm:text-[4.75rem] lg:text-[6rem]">
+          <h1 className="mt-6 font-display text-[15vw] font-bold uppercase leading-[0.86] tracking-tighter text-foreground sm:text-[4.5rem] lg:text-[5.25rem]">
             <Reveal delay={60} as="span" className="block sm:whitespace-nowrap">
               We create.
             </Reveal>
