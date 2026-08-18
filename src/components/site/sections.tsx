@@ -43,11 +43,11 @@ export function Hero() {
           <Reveal>
             <p className="kp-eyebrow">360° Creative &amp; Digital Growth Agency</p>
           </Reveal>
-          <h1 className="mt-6 font-display text-[15vw] font-bold uppercase leading-[0.86] tracking-tighter text-foreground sm:text-[5.5rem] lg:text-[6.75rem]">
-            <Reveal delay={60} as="span" className="block">
+          <h1 className="mt-6 font-display text-[15vw] font-bold uppercase leading-[0.86] tracking-tighter text-foreground sm:text-[4.75rem] lg:text-[6rem]">
+            <Reveal delay={60} as="span" className="block sm:whitespace-nowrap">
               We create.
             </Reveal>
-            <Reveal delay={160} as="span" className="block kp-gradient-text">
+            <Reveal delay={160} as="span" className="block kp-gradient-text sm:whitespace-nowrap">
               You grow.
             </Reveal>
           </h1>
