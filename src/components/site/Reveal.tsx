@@ -13,12 +13,14 @@ export function Reveal({
   as?: ElementType | undefined;
 }) {
   const ref = useRef<HTMLElement | null>(null);
+  // Content stays visible until JS is ready, so SSR output is never blank.
+  const [armed, setArmed] = useState(false);
   const [shown, setShown] = useState(false);
 
   useEffect(() => {
-    console.log("KPREVEAL effect", !!ref.current);
     const node = ref.current;
     if (!node) return;
+    setArmed(true);
     const io = new IntersectionObserver(
       (entries) => {
         if (entries[0]?.isIntersecting) {
@@ -26,7 +28,7 @@ export function Reveal({
           io.disconnect();
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
+      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
     );
     io.observe(node);
     return () => io.disconnect();
@@ -37,7 +39,7 @@ export function Reveal({
       ref={ref}
       data-shown={shown}
       style={{ transitionDelay: `${delay}ms` }}
-      className={cn("kp-reveal", className)}
+      className={cn(armed && "kp-reveal", className)}
     >
       {children}
     </Tag>
