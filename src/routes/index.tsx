@@ -1,24 +1,63 @@
 import { createFileRoute } from "@tanstack/react-router";
+import {
+  Hero,
+  IntroStrip,
+  ServicesSection,
+  AdvertisingFeature,
+  VideoSection,
+  CreatorSection,
+  CollabSection,
+  WorkSection,
+  ProcessSection,
+  AboutSection,
+} from "@/components/site/sections";
+import { CtaSection } from "@/components/site/CtaSection";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Kreative Planet — Creative & Digital Growth Agency";
+const description =
+  "Kreative Planet is a 360° creative and digital growth agency: social media, video production, creative advertising, websites, SEO and creator collaborations.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:url", content: "/" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Kreative Planet",
+          description,
+          slogan: "We Create. You Grow.",
+          url: "/",
+        }),
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Hero />
+      <IntroStrip />
+      <ServicesSection />
+      <AdvertisingFeature />
+      <VideoSection />
+      <CreatorSection />
+      <CollabSection />
+      <WorkSection />
+      <ProcessSection />
+      <AboutSection />
+      <CtaSection />
+    </>
   );
 }
